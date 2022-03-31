@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc/dev4vin-commons",
+    "declaration": true,
+    "types": ["node"]
+  },
+
+  "include": ["**/*.ts"],
+  "exclude": ["**/*.spec.ts"]
+}
