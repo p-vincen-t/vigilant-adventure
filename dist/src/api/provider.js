@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.GetHeaders = exports.ApiProvider = exports.Request = void 0;
 const query_string_1 = require("query-string");
 const logger_1 = require("../utils/logger");
 /**
@@ -7,12 +8,12 @@ const logger_1 = require("../utils/logger");
  * @param api
  * @returns
  */
-exports.Request = (api) => {
+const Request = (api) => {
     api.interceptors.request.use((config) => {
         var url = config.url;
         //config.headers = GetHeaders
         //config.data = stringify(config.data);
-        logger_1.info({
+        (0, logger_1.info)({
             name: 'http request',
             msg: {
                 url,
@@ -23,14 +24,14 @@ exports.Request = (api) => {
         return config;
     });
     const HandleResponse = (response) => {
-        logger_1.info({
+        (0, logger_1.info)({
             name: 'http response',
             msg: response.data
         });
         return Promise.resolve(response);
     };
     const HandleError = (error) => {
-        logger_1.error({
+        (0, logger_1.error)({
             name: 'http error',
             msg: error.toJSON()
         });
@@ -59,6 +60,7 @@ exports.Request = (api) => {
             .catch((error) => HandleError(error))
     };
 };
+exports.Request = Request;
 /**
  *
  *
@@ -83,7 +85,7 @@ class ApiProvider {
      * @memberof ApiProvider
      */
     stringify(data) {
-        return query_string_1.stringify(data);
+        return (0, query_string_1.stringify)(data);
     }
     /**
      *
@@ -109,7 +111,7 @@ class ApiProvider {
         };
         return new Promise((resolve, reject) => {
             this.request
-                .get(`/${resource}?${query_string_1.stringify(query)}`)
+                .get(`/${resource}?${(0, query_string_1.stringify)(query)}`)
                 .then(({ status, data }) => {
                 resolve({
                     data: data.data,
@@ -163,7 +165,7 @@ class ApiProvider {
         // return httpClient(url).then(({ json }) => ({ data: json }));
         return new Promise((resolve, reject) => {
             this.request
-                .get(`/${resource}?${query_string_1.stringify(query)}`)
+                .get(`/${resource}?${(0, query_string_1.stringify)(query)}`)
                 .then(({ status, data }) => {
                 resolve({
                     data: data.data,

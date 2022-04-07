@@ -12,6 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.waitUntil = void 0;
 const sleep_1 = __importDefault(require("./sleep"));
 function waitUntil(test, options = {}) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -23,7 +24,7 @@ function waitUntil(test, options = {}) {
         if (tries - 1 === 0) {
             throw new Error('tries limit reached');
         }
-        yield sleep_1.default(delay);
+        yield (0, sleep_1.default)(delay);
         return waitUntil(test, Object.assign(Object.assign({}, options), { tries: tries > 0 ? tries - 1 : tries }));
     });
 }

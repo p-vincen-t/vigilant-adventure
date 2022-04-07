@@ -839,7 +839,7 @@
         "@dev4vin/commons": [
           "libs/@dev4vin-commons/src/index.ts"
         ],
-        "@dev4vin/nest-api-helpers": [
+        "@dev4vin/nest_api": [
           "libs/nest-api-helpers/src/index.ts"
         ],
         "@intl-caht/api-models": [

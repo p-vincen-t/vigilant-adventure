@@ -2,6 +2,7 @@
 // The API is inspired by console.time
 // The implementation is isomorphic.
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Metric = void 0;
 /**
  *
  */

@@ -499,13 +499,13 @@
         "@dev4vin/commons": [
           "libs/@dev4vin-commons/src/index.ts"
         ],
-        "@dev4vin/nest-api-helpers": [
+        "@dev4vin/nest_api": [
           "libs/nest-api-utils/src/index.ts"
         ],
-        "@dev4vin/nest-helpers-auth": [
+        "@dev4vin/nest_auth": [
           "libs/helpers/nest-helpers-auth/src/index.ts"
         ],
-        "@dev4vin/nest-helpers-data": [
+        "@dev4vin/nest_data": [
           "libs/helpers/nest-helpers-data/src/index.ts"
         ],
         "@intl-caht/api-models": [

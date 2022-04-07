@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.runScripts = void 0;
 const util = require('util');
 const childProcess = require('child_process');
 //const { setUpAdminUser } = require('../setupAdminUser');

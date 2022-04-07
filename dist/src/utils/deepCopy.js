@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DeepExtend = exports.DeepCopy = void 0;
 /**
  * Returns a deep copy of an object or array.
  *

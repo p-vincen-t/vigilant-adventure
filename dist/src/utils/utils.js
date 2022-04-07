@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.asyncPipe = exports.code = exports.uid = exports.hasOwnProperty = void 0;
 function hasOwnProperty(obj, prop) {
     return obj.hasOwnProperty(prop);
 }
@@ -22,20 +23,22 @@ exports.hasOwnProperty = hasOwnProperty;
  * @return {String}
  * @api private
  */
-exports.uid = (len) => {
+const uid = (len) => {
     var buf = [], chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789', charlen = chars.length;
     for (var i = 0; i < len; ++i) {
         buf.push(chars[getRandomInt(0, charlen - 1)]);
     }
     return buf.join('');
 };
-exports.code = (len) => {
+exports.uid = uid;
+const code = (len) => {
     var buf = [], chars = '0123456789', charlen = chars.length;
     for (var i = 0; i < len; ++i) {
         buf.push(chars[getRandomInt(0, charlen - 1)]);
     }
     return buf.join('');
 };
+exports.code = code;
 /**
  * Return a random int, used by `utils.uid() and utils.code()`
  *
@@ -47,5 +50,6 @@ exports.code = (len) => {
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-exports.asyncPipe = (...fns) => (x) => fns.reduce((y, f) => __awaiter(void 0, void 0, void 0, function* () { return f(yield y); }), x);
+const asyncPipe = (...fns) => (x) => fns.reduce((y, f) => __awaiter(void 0, void 0, void 0, function* () { return f(yield y); }), x);
+exports.asyncPipe = asyncPipe;
 //# sourceMappingURL=utils.js.map

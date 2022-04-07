@@ -23,12 +23,12 @@ export class Conditions {
     static checkElementIndex$2: (index: any, size: any) => any;
     static checkElementIndex$3: (index: any, size: any, desc: any) => any;
     static checkElementIndex: (...args$: any[]) => any;
-    static badElementIndex: (index: any, size: any, desc: any) => any;
+    static badElementIndex: (index: any, size: any, desc: any) => string;
     static checkPositionIndex$2: (index: any, size: any) => any;
     static checkPositionIndex$3: (index: any, size: any, desc: any) => any;
     static checkPositionIndex: (...args$: any[]) => any;
-    static badPositionIndex: (index: any, size: any, desc: any) => any;
+    static badPositionIndex: (index: any, size: any, desc: any) => string;
     static checkPositionIndexes: (start: any, end: any, size: any) => void;
-    static badPositionIndexes: (start: any, end: any, size: any) => any;
+    static badPositionIndexes: (start: any, end: any, size: any) => string;
     static format: (template: any, args: any) => string;
 }

@@ -10,10 +10,11 @@
     "module": "commonjs",
     "sourceMap": true,
     "target": "es2015",
+    "skipLibCheck": true,
     "preserveConstEnums": true
   },
   "include": [
-    "src/**/*"
+    "src"
   ],
   "exclude": ["**/*.spec.ts", "node_modules"]
 }

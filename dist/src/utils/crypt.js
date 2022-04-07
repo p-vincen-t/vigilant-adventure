@@ -1,6 +1,7 @@
 "use strict";
 // import * as crypto from 'crypto';
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.createSHA256 = exports.crypt = void 0;
 function crypt(ENCRYPTION_KEY) {
     // // Must be 256 bits (32 characters)
     // if (!ENCRYPTION_KEY) throw new Error('encrytion key not found'); // For AES, this is always 16

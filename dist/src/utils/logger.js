@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.fatal = exports.error = exports.warn = exports.info = exports.LogType = exports.prefixes = void 0;
 exports.prefixes = {
     wait: 'wait' + '  -',
     error: 'error' + ' -',
@@ -9,13 +10,14 @@ exports.prefixes = {
     event: 'event' + ' -'
 };
 /* eslint-disable no-console */
-exports.LogType = (
+const LogType = (
 // @ts-ignore
 { name, msg, force = false }) => ({
     name,
     msg,
     force
 });
+exports.LogType = LogType;
 // https://github.com/trentm/node-bunyan#levels
 const logTypes = {
     // Detail on regular operation.

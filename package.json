@@ -5,12 +5,12 @@
   "description": "Common utils for Js development",
   "repository": {
     "type": "git",
-    "url": "https::github.com/dev4vin/vigilant-adventure"
+    "url": "https://github.com/dev4vin/vigilant-adventure"
   },
   "license": "MIT",
   "author": "Peter Vincent",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
   "files": [
     "/dist"
   ],
@@ -19,6 +19,7 @@
     "query-string": "^7.1.1"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "readme": "readme-md-generator"
   }
 }

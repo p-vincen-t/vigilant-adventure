@@ -12,6 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Queue = void 0;
 const waitUntil_1 = __importDefault(require("./waitUntil"));
 class Queue {
     constructor(worker, options = {}) {
@@ -40,7 +41,7 @@ class Queue {
                 }
             }));
         };
-        this.wait = (options = {}) => waitUntil_1.default(() => {
+        this.wait = (options = {}) => (0, waitUntil_1.default)(() => {
             if (this.err) {
                 this.pendingEntries = [];
                 throw this.err;

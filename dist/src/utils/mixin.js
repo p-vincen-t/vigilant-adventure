@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Extends = void 0;
 // the helper function
 function applyMixins(derivedCtor, constructors) {
     constructors.forEach((baseCtor) => {
