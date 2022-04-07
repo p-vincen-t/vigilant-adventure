@@ -1,160 +1,162 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Validates that a value is a byte buffer.
  *
  * @param {any} value The value to validate.
  * @return {boolean} Whether the value is byte buffer or not.
  */
-export function isBuffer(value: any): boolean {
-  return value instanceof Buffer;
+function isBuffer(value) {
+    return value instanceof Buffer;
 }
-
+exports.isBuffer = isBuffer;
 /**
  * Validates that a value is an array.
  *
  * @param {any} value The value to validate.
  * @return {boolean} Whether the value is an array or not.
  */
-export function isArray(value: any): boolean {
-  return Array.isArray(value);
+function isArray(value) {
+    return Array.isArray(value);
 }
-
+exports.isArray = isArray;
 /**
  * Validates that a value is a non-empty array.
  *
  * @param {any} value The value to validate.
  * @return {boolean} Whether the value is a non-empty array or not.
  */
-export function isNonEmptyArray(value: any): boolean {
-  return isArray(value) && value.length !== 0;
+function isNonEmptyArray(value) {
+    return isArray(value) && value.length !== 0;
 }
-
+exports.isNonEmptyArray = isNonEmptyArray;
 /**
  * Validates that a value is a boolean.
  *
  * @param {any} value The value to validate.
  * @return {boolean} Whether the value is a boolean or not.
  */
-export function isBoolean(value: any): boolean {
-  return typeof value === 'boolean';
+function isBoolean(value) {
+    return typeof value === 'boolean';
 }
-
+exports.isBoolean = isBoolean;
 /**
  * Validates that a value is a number.
  *
  * @param {any} value The value to validate.
  * @return {boolean} Whether the value is a number or not.
  */
-export function isNumber(value: any): boolean {
-  return typeof value === 'number' && !isNaN(value);
+function isNumber(value) {
+    return typeof value === 'number' && !isNaN(value);
 }
-
+exports.isNumber = isNumber;
 /**
  * Validates that a value is a string.
  *
  * @param {any} value The value to validate.
  * @return {boolean} Whether the value is a string or not.
  */
-export function isString(value: any): value is string {
-  return typeof value === 'string';
+function isString(value) {
+    return typeof value === 'string';
 }
-
+exports.isString = isString;
 /**
  * Validates that a value is a base64 string.
  *
  * @param {any} value The value to validate.
  * @return {boolean} Whether the value is a base64 string or not.
  */
-export function isBase64String(value: any): boolean {
-  if (!isString(value)) {
-    return false;
-  }
-  return /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(value);
+function isBase64String(value) {
+    if (!isString(value)) {
+        return false;
+    }
+    return /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(value);
 }
-
+exports.isBase64String = isBase64String;
 /**
  * Validates that a value is a non-empty string.
  *
  * @param {any} value The value to validate.
  * @return {boolean} Whether the value is a non-empty string or not.
  */
-export function isNonEmptyString(value: any): boolean {
-  return isString(value) && value !== '';
+function isNonEmptyString(value) {
+    return isString(value) && value !== '';
 }
-
+exports.isNonEmptyString = isNonEmptyString;
 /**
  * Validates that a value is a nullable object.
  *
  * @param {any} value The value to validate.
  * @return {boolean} Whether the value is an object or not.
  */
-export function isObject(value: any): boolean {
-  return typeof value === 'object' && !isArray(value);
+function isObject(value) {
+    return typeof value === 'object' && !isArray(value);
 }
-
+exports.isObject = isObject;
 /**
  * Validates that a value is a non-null object.
  *
  * @param {any} value The value to validate.
  * @return {boolean} Whether the value is a non-null object or not.
  */
-export function isNonNullObject(value: any): boolean {
-  return isObject(value) && value !== null;
+function isNonNullObject(value) {
+    return isObject(value) && value !== null;
 }
-
+exports.isNonNullObject = isNonNullObject;
 /**
  * Validates that a string is a valid Firebase Auth uid.
  *
  * @param {any} uid The string to validate.
  * @return {boolean} Whether the string is a valid Firebase Auth uid.
  */
-export function isUid(uid: any): boolean {
-  return typeof uid === 'string' && uid.length > 0 && uid.length <= 128;
+function isUid(uid) {
+    return typeof uid === 'string' && uid.length > 0 && uid.length <= 128;
 }
-
+exports.isUid = isUid;
 /**
  * Validates that a string is a valid Firebase Auth password.
  *
  * @param {any} password The password string to validate.
  * @return {boolean} Whether the string is a valid Firebase Auth password.
  */
-export function isPassword(password: any): boolean {
-  // A password must be a string of at least 6 characters.
-  return typeof password === 'string' && password.length >= 6;
+function isPassword(password) {
+    // A password must be a string of at least 6 characters.
+    return typeof password === 'string' && password.length >= 6;
 }
-
+exports.isPassword = isPassword;
 /**
  * Validates that a string is a valid email.
  *
  * @param {any} email The string to validate.
  * @return {boolean} Whether the string is valid email or not.
  */
-export function isEmail(email: any): boolean {
-  if (typeof email !== 'string') {
-    return false;
-  }
-  // There must at least one character before the @ symbol and another after.
-  return /^[^@]+@[^@]+$/.test(email);
+function isEmail(email) {
+    if (typeof email !== 'string') {
+        return false;
+    }
+    // There must at least one character before the @ symbol and another after.
+    return /^[^@]+@[^@]+$/.test(email);
 }
-
+exports.isEmail = isEmail;
 /**
  * Validates that a string is a valid phone number.
  *
  * @param {any} phoneNumber The string to validate.
  * @return {boolean} Whether the string is a valid phone number or not.
  */
-export function isPhoneNumber(phoneNumber: any): boolean {
-  if (typeof phoneNumber !== 'string') {
-    return false;
-  }
-  // Phone number validation is very lax here. Backend will enforce E.164
-  // spec compliance and will normalize accordingly.
-  // The phone number string must be non-empty and starts with a plus sign.
-  const re1 = /^\+/;
-  // The phone number string must contain at least one alphanumeric character.
-  const re2 = /[\da-zA-Z]+/;
-  return re1.test(phoneNumber) && re2.test(phoneNumber);
+function isPhoneNumber(phoneNumber) {
+    if (typeof phoneNumber !== 'string') {
+        return false;
+    }
+    // Phone number validation is very lax here. Backend will enforce E.164
+    // spec compliance and will normalize accordingly.
+    // The phone number string must be non-empty and starts with a plus sign.
+    const re1 = /^\+/;
+    // The phone number string must contain at least one alphanumeric character.
+    const re2 = /[\da-zA-Z]+/;
+    return re1.test(phoneNumber) && re2.test(phoneNumber);
 }
-
+exports.isPhoneNumber = isPhoneNumber;
 // /**
 //  * Validates that a string is a valid web URL.
 //  *
@@ -197,18 +199,18 @@ export function isPhoneNumber(phoneNumber: any): boolean {
 //   }
 //   return true;
 // }
-
 /**
  * Validates that the provided topic is a valid FCM topic name.
  *
  * @param {any} topic The topic to validate.
  * @return {boolean} Whether the provided topic is a valid FCM topic name.
  */
-export function isTopic(topic: any): boolean {
-  if (typeof topic !== 'string') {
-    return false;
-  }
-
-  const VALID_TOPIC_REGEX = /^(\/topics\/)?(private\/)?[a-zA-Z0-9-_.~%]+$/;
-  return VALID_TOPIC_REGEX.test(topic);
+function isTopic(topic) {
+    if (typeof topic !== 'string') {
+        return false;
+    }
+    const VALID_TOPIC_REGEX = /^(\/topics\/)?(private\/)?[a-zA-Z0-9-_.~%]+$/;
+    return VALID_TOPIC_REGEX.test(topic);
 }
+exports.isTopic = isTopic;
+//# sourceMappingURL=validator.js.map

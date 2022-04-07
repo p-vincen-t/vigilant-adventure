@@ -124,7 +124,7 @@ export class Metric {
   /**
    * Call to begin a measurement.
    */
-  start(name: any) {
+  start() {
     Metric.start(this.name);
   }
 

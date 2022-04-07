@@ -1,6 +1,7 @@
 {
   "name": "@dev4vin/commons",
   "version": "0.0.1",
+  "type": "commonjs",
   "description": "Common utils for Js development",
   "repository": {
     "type": "git",
@@ -8,15 +9,16 @@
   },
   "license": "MIT",
   "author": "Peter Vincent",
-  "main": "src/index.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "dependencies": {
     "axios": "^0.21.4",
     "query-string": "^7.1.1"
   },
-  "devDependencies": {
-    "glob-gitignore": "",
-    "jest": "^27.5.1",
-    "typescript": "~4.5.2",
-    "yargs": ""
+  "scripts": {
+    "build": "tsc"
   }
 }

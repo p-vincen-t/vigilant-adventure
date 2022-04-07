@@ -1,11 +1,19 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc/dev4vin-commons",
     "declaration": true,
-    "types": ["node"]
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "lib": ["DOM", "ESNext"],
+    "types": ["node"],
+    "module": "commonjs",
+    "sourceMap": true,
+    "target": "es2015",
+    "preserveConstEnums": true
   },
-
-  "include": ["**/*.ts"],
-  "exclude": ["**/*.spec.ts"]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": ["**/*.spec.ts", "node_modules"]
 }

@@ -1,0 +1,34 @@
+export class Conditions {
+    static checkArgument$1: (expression: any) => void;
+    static checkArgument$2: (expression: any, errorMessage: any) => void;
+    static checkArgument$3: (b: any, errorMessageTemplate: any, p1: any) => void;
+    static checkArgument$4: (b: any, errorMessageTemplate: any, p1: any, p2: any) => void;
+    static checkArgument$5: (b: any, errorMessageTemplate: any, p1: any, p2: any, p3: any) => void;
+    static checkArgument$6: (b: any, errorMessageTemplate: any, p1: any, p2: any, p3: any, p4: any) => void;
+    static checkArgument: (...args$: any[]) => void;
+    static checkState$1: (expression: any) => void;
+    static checkState$2: (expression: any, errorMessage: any) => void;
+    static checkState$3: (b: any, errorMessageTemplate: any, p1: any) => void;
+    static checkState$4: (b: any, errorMessageTemplate: any, p1: any, p2: any) => void;
+    static checkState$5: (b: any, errorMessageTemplate: any, p1: any, p2: any, p3: any) => void;
+    static checkState$6: (b: any, errorMessageTemplate: any, p1: any, p2: any, p3: any, p4: any) => void;
+    static checkState: (...args$: any[]) => void;
+    static checkNotNull$1: (reference: any) => any;
+    static checkNotNull$2: (reference: any, errorMessage: any) => any;
+    static checkNotNull$3: (obj: any, errorMessageTemplate: any, p1: any) => any;
+    static checkNotNull$4: (obj: any, errorMessageTemplate: any, p1: any, p2: any) => any;
+    static checkNotNull$5: (obj: any, errorMessageTemplate: any, p1: any, p2: any, p3: any) => any;
+    static checkNotNull$6: (obj: any, errorMessageTemplate: any, p1: any, p2: any, p3: any, p4: any) => any;
+    static checkNotNull: (...args$: any[]) => any;
+    static checkElementIndex$2: (index: any, size: any) => any;
+    static checkElementIndex$3: (index: any, size: any, desc: any) => any;
+    static checkElementIndex: (...args$: any[]) => any;
+    static badElementIndex: (index: any, size: any, desc: any) => any;
+    static checkPositionIndex$2: (index: any, size: any) => any;
+    static checkPositionIndex$3: (index: any, size: any, desc: any) => any;
+    static checkPositionIndex: (...args$: any[]) => any;
+    static badPositionIndex: (index: any, size: any, desc: any) => any;
+    static checkPositionIndexes: (start: any, end: any, size: any) => void;
+    static badPositionIndexes: (start: any, end: any, size: any) => any;
+    static format: (template: any, args: any) => string;
+}

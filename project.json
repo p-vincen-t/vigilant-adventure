@@ -1,30 +1,30 @@
 {
-  "root": "libs/dev4vin-commons",
-  "sourceRoot": "libs/dev4vin-commons/src",
+  "root": "libs/@dev4vin-commons",
+  "sourceRoot": "libs/@dev4vin-commons/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nrwl/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/dev4vin-commons",
-        "main": "libs/dev4vin-commons/src/index.ts",
-        "tsConfig": "libs/dev4vin-commons/tsconfig.lib.json",
-        "assets": ["libs/dev4vin-commons/*.md"]
+        "outputPath": "dist/libs/@dev4vin-commons",
+        "main": "libs/@dev4vin-commons/src/index.ts",
+        "tsConfig": "libs/@dev4vin-commons/tsconfig.lib.json",
+        "assets": ["libs/@dev4vin-commons/*.md"]
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/dev4vin-commons/**/*.ts"]
+        "lintFilePatterns": ["libs/@dev4vin-commons/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/dev4vin-commons"],
+      "outputs": ["coverage/libs/@dev4vin-commons"],
       "options": {
-        "jestConfig": "libs/dev4vin-commons/jest.config.js",
+        "jestConfig": "libs/@dev4vin-commons/jest.config.js",
         "passWithNoTests": true
       }
     }
