@@ -10,8 +10,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const util = require('util');
-const childProcess = require('child_process');
-const execFileAsync = util.promisify(childProcess.execFile);
+//const childProcess = require('child_process');
+// const execFileAsync = util.promisify(childProcess.execFile);
 function exec(command, args) {
     return __awaiter(this, void 0, void 0, function* () {
         const options = {
@@ -20,8 +20,8 @@ function exec(command, args) {
             stdio: 'pipe',
             encoding: 'utf-8'
         };
-        const results = yield execFileAsync(command, args, options);
-        return results.stdout;
+        // const results = await execFileAsync(command, args, options);
+        // return results.stdout;
     });
 }
 function execGitCmd(args) {

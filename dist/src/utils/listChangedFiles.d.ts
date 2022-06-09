@@ -1,1 +1,1 @@
-export function listChangedFiles(): Promise<Set<string>>;
+export function listChangedFiles(): Promise<Set<any>>;

@@ -2,9 +2,9 @@
 // https://github.com/facebook/react/blob/b87aabdfe1b7461e7331abb3601d9e6bb27544bc/scripts/shared/listChangedFiles.js
 
 const util = require('util');
-const childProcess = require('child_process');
+//const childProcess = require('child_process');
 
-const execFileAsync = util.promisify(childProcess.execFile);
+// const execFileAsync = util.promisify(childProcess.execFile);
 
 async function exec(command, args) {
   const options = {
@@ -14,8 +14,8 @@ async function exec(command, args) {
     encoding: 'utf-8'
   };
 
-  const results = await execFileAsync(command, args, options);
-  return results.stdout;
+  // const results = await execFileAsync(command, args, options);
+  // return results.stdout;
 }
 
 async function execGitCmd(args) {
