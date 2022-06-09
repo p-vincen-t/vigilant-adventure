@@ -1,6 +1,6 @@
 {
   "name": "@dev4vin/commons",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "commonjs",
   "description": "Common utils for Js development",
   "repository": {
@@ -15,7 +15,7 @@
     "/dist"
   ],
   "dependencies": {
-    "axios": "^0.21.4",    
+    "axios": "^0.21.4",
     "query-string": "^7.1.1"
   },
   "scripts": {
