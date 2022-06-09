@@ -1,6 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetHeaders = exports.ApiProvider = exports.Request = void 0;
+const axios_1 = __importDefault(require("axios"));
 const query_string_1 = require("query-string");
 const logger_1 = require("../utils/logger");
 /**
@@ -8,7 +12,8 @@ const logger_1 = require("../utils/logger");
  * @param api
  * @returns
  */
-const Request = (api) => {
+const Request = (options) => {
+    const api = axios_1.default.create(options);
     api.interceptors.request.use((config) => {
         var url = config.url;
         //config.headers = GetHeaders

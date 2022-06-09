@@ -1,4 +1,4 @@
-import { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { stringify } from 'query-string';
 import { error as e, info as i } from '../utils/logger';
 /**
@@ -28,7 +28,8 @@ export type RequestImpl = {
  * @param api
  * @returns
  */
-export const Request = (api: AxiosInstance): RequestImpl => {
+export const Request = (options: AxiosRequestConfig): RequestImpl => {
+  const api = axios.create(options);
   api.interceptors.request.use((config) => {
     var url = config.url;
     //config.headers = GetHeaders

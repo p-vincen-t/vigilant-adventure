@@ -1,4 +1,4 @@
-import { AxiosInstance } from 'axios';
+import { AxiosRequestConfig } from 'axios';
 /**
  * request object template structure
  */
@@ -26,7 +26,7 @@ export declare type RequestImpl = {
  * @param api
  * @returns
  */
-export declare const Request: (api: AxiosInstance) => RequestImpl;
+export declare const Request: (options: AxiosRequestConfig) => RequestImpl;
 /**
  *
  *
