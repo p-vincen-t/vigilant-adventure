@@ -19,7 +19,12 @@
     "query-string": "^7.1.1"
   },
   "scripts": {
-    "build": "tsc",
-    "readme": "readme-md-generator"
+    "build": "tsc --project tsconfig.lib.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/dev4vin/vigilant-adventure/issues"
   }
 }

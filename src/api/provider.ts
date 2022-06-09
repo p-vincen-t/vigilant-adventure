@@ -2,15 +2,23 @@ import { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
 import { stringify } from 'query-string';
 import { error as e, info as i } from '../utils/logger';
 /**
- *
+ * request object template structure
  */
 export type RequestImpl = {
+  /**
+   * calls a get request to the specified endpoint
+   *
+   */
+  get: (endpoint: string, headers?: {}) => Promise<any>;
   /**
    *
    *
    */
-  get: (endpoint: string, headers?: {}) => Promise<any>;
   post: (endpoint: string, payload: any, headers?: {}) => Promise<any>;
+  /**
+   *
+   *
+   */
   patch: (endpoint: string, payload: any, headers: {}) => Promise<any>;
   put: (endpoint: string, payload: any, headers?: {}) => Promise<any>;
   delete: (endpoint: string, headers?: {}) => Promise<any>;

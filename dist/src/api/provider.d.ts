@@ -1,13 +1,17 @@
 import { AxiosInstance } from 'axios';
 /**
- *
+ * request object template structure
  */
 export declare type RequestImpl = {
+    /**
+     * calls a get request to the specified endpoint
+     *
+     */
+    get: (endpoint: string, headers?: {}) => Promise<any>;
     /**
      *
      *
      */
-    get: (endpoint: string, headers?: {}) => Promise<any>;
     post: (endpoint: string, payload: any, headers?: {}) => Promise<any>;
     patch: (endpoint: string, payload: any, headers: {}) => Promise<any>;
     put: (endpoint: string, payload: any, headers?: {}) => Promise<any>;

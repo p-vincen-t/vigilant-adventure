@@ -18,4 +18,5 @@ __exportStar(require("./api"), exports);
 __exportStar(require("./lib"), exports);
 __exportStar(require("./types"), exports);
 __exportStar(require("./utils"), exports);
+__exportStar(require("./wrap.fn"), exports);
 //# sourceMappingURL=index.js.map
