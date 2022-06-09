@@ -13,6 +13,10 @@ export declare type RequestImpl = {
      *
      */
     post: (endpoint: string, payload: any, headers?: {}) => Promise<any>;
+    /**
+     *
+     *
+     */
     patch: (endpoint: string, payload: any, headers: {}) => Promise<any>;
     put: (endpoint: string, payload: any, headers?: {}) => Promise<any>;
     delete: (endpoint: string, headers?: {}) => Promise<any>;
