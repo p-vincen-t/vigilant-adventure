@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetHeaders = exports.ApiProvider = exports.Request = void 0;
 const axios_1 = __importDefault(require("axios"));
 const query_string_1 = require("query-string");
-const logger_1 = require("../utils/logger");
 /**
  *
  * @param api
@@ -15,31 +14,31 @@ const logger_1 = require("../utils/logger");
 const Request = (options) => {
     const api = axios_1.default.create(options);
     api.interceptors.request.use((config) => {
-        var url = config.url;
+        // var url = config.url;
         //config.headers = GetHeaders
         //config.data = stringify(config.data);
-        (0, logger_1.info)({
-            name: 'http request',
-            msg: {
-                url,
-                data: config.data,
-                headers: config.headers
-            }
-        });
+        // i({
+        //   name: 'http request',
+        //   msg: {
+        //     url,
+        //     data: config.data,
+        //     headers: config.headers
+        //   }
+        // });
         return config;
     });
     const HandleResponse = (response) => {
-        (0, logger_1.info)({
-            name: 'http response',
-            msg: response.data
-        });
+        // i({
+        //   name: 'http response',
+        //   msg: response.data
+        // });
         return Promise.resolve(response);
     };
     const HandleError = (error) => {
-        (0, logger_1.error)({
-            name: 'http error',
-            msg: error.toJSON()
-        });
+        // e({
+        //   name: 'http error',
+        //   msg: error.toJSON()
+        // });
         return Promise.reject(error.response);
     };
     return {

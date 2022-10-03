@@ -3,6 +3,7 @@
   "compilerOptions": {
     "declaration": true,
     "outDir": "dist",
+    "strict": false,
     "esModuleInterop": true,
     "isolatedModules": true,
     "lib": ["DOM", "ESNext"],

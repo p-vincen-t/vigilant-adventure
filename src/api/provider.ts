@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { stringify } from 'query-string';
-import { error as e, info as i } from '../utils/logger';
+// import { error as e, info as i } from '../utils/logger';
 /**
  * request object template structure
  */
@@ -31,33 +31,33 @@ export type RequestImpl = {
 export const Request = (options: AxiosRequestConfig): RequestImpl => {
   const api = axios.create(options);
   api.interceptors.request.use((config) => {
-    var url = config.url;
+    // var url = config.url;
     //config.headers = GetHeaders
     //config.data = stringify(config.data);
-    i({
-      name: 'http request',
-      msg: {
-        url,
-        data: config.data,
-        headers: config.headers
-      }
-    });
+    // i({
+    //   name: 'http request',
+    //   msg: {
+    //     url,
+    //     data: config.data,
+    //     headers: config.headers
+    //   }
+    // });
     return config;
   });
 
   const HandleResponse = (response: AxiosResponse<any>) => {
-    i({
-      name: 'http response',
-      msg: response.data
-    });
+    // i({
+    //   name: 'http response',
+    //   msg: response.data
+    // });
     return Promise.resolve(response);
   };
 
   const HandleError = (error: AxiosError) => {
-    e({
-      name: 'http error',
-      msg: error.toJSON()
-    });
+    // e({
+    //   name: 'http error',
+    //   msg: error.toJSON()
+    // });
     return Promise.reject(error.response);
   };
 
